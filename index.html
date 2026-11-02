@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Личный кабинет студента МГУУ · три месяца</title>
+<meta name="description" content="План на три месяца: к 29 января 2027 года у студентов Университета Правительства Москвы работает личный кабинет — профиль, расписание и зачётка, сообщения, опросы и объявления. Два разработчика, три виртуальные машины университета.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="Личный кабинет студента Университета Правительства Москвы за три месяца">
+<meta property="og:description" content="Ноябрь 2026 – январь 2027: профиль из API университета, сообщения, опросы и объявления. Два разработчика, 580 тыс. ₽ в месяц на руки.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/logo-mguu.png">
+<link rel="preload" href="assets/fonts/DINish-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=26">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__campus)document.documentElement.classList.remove('js')},4000)</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 256 256"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
+    <symbol id="i-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol>
+    <symbol id="i-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol>
+    <!-- Стилеобразующие модули логотипа (руководство, с. 14 и 19) -->
+    <symbol id="pg-y" viewBox="0 0 100 100"><polygon style="fill:var(--k1,#6D6E71)" points="0,100 47.5,100 47.5,46.8 0.7,0"/><polygon style="fill:var(--k2,#F58221)" points="24.1,0 50,25.9 75.9,0"/><polygon style="fill:var(--k3,#C7254B)" points="99.3,0 52.5,46.8 52.5,100 100,100 100,0"/></symbol>
+    <symbol id="pg-g" viewBox="0 0 100 100"><polygon style="fill:var(--k1,#6D6E71)" points="0,100 51.9,100 51.9,43.2 0,0.1"/><polygon style="fill:var(--k2,#178ACB)" points="7.2,0 54.3,39.7 100,39.7 100,0"/><polygon style="fill:var(--k3,#178ACB)" points="68.4,100 100,100 100,56.4 68.4,56.4"/></symbol>
+    <symbol id="pg-w" viewBox="0 0 100 100"><polygon style="fill:var(--k1,#6D6E71)" points="94.4,0 10.5,0 52.5,41.9"/><polygon style="fill:var(--k2,#3DB54A)" points="41.2,53.2 0,12.8 0,94.4"/><polygon style="fill:var(--k3,#FDB913)" points="1.5,100 100,100 100,1.7"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="site-head" id="head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="Университет Правительства Москвы — в начало"><img class="brand-mark" src="assets/logo-mark.svg" alt="" width="52" height="52"><span class="brand-text" aria-hidden="true">Университет<br>Правительства<br>Москвы</span></a>
+    <p class="head-now" aria-hidden="true"><span class="sq"></span><span class="swap"><span class="n" id="head-n"></span><span class="t" id="head-t">Личный кабинет студента</span></span></p>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" aria-expanded="false" id="menu-open">
+      Разделы <svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>
+    </button>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <button class="sheet-scrim" type="button" tabindex="-1" aria-label="Закрыть меню" data-close></button>
+  <div class="sheet-panel">
+    <div class="sheet-top">
+      <h2 id="sheet-title">Разделы</h2>
+      <button class="sheet-close" type="button" aria-label="Закрыть меню" data-close><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <nav class="toc" aria-label="Содержание">
+      <div class="toc-part" style="--c:var(--crimson);--i:0">
+        <h3><span class="sq"></span>Часть 1 · Кабинет и план</h3>
+        <ol>
+          <li><a href="#services"><span class="n">01</span>Что будет в кабинете</a></li>
+          <li><a href="#data"><span class="n">02</span>Как кабинет получает данные</a></li>
+          <li><a href="#roadmap"><span class="n">03</span>План на 13 недель</a></li>
+        </ol>
+      </div>
+      <div class="toc-part" style="--c:var(--yellow);--i:1">
+        <h3><span class="sq"></span>Часть 2 · Бюджет и решение</h3>
+        <ol>
+          <li><a href="#budget"><span class="n">04</span>Команда и бюджет</a></li>
+          <li><a href="#staff"><span class="n">05</span>Что нужно от университета</a></li>
+          <li><a href="#decision"><span class="n">06</span>Решение и первые шаги</a></li>
+        </ol>
+      </div>
+      <div class="toc-part" style="--c:var(--blue);--i:2">
+        <h3><span class="sq"></span>Часть 3 · Технические детали</h3>
+        <ol>
+          <li><a href="#stack"><span class="n">07</span>Технологии</a></li>
+          <li><a href="#infra"><span class="n">08</span>Три виртуальные машины</a></li>
+          <li><a href="#security"><span class="n">09</span>ИБ и персональные данные</a></li>
+          <li><a href="#open"><span class="n">10</span>Допущения и открытые вопросы</a></li>
+          <li><a href="#sources"><span class="n">11</span>Источники</a></li>
+        </ol>
+      </div>
+    </nav>
+    <p class="toc-foot">Личный кабинет студента Университета Правительства Москвы · план на три месяца · ноябрь 2026</p>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ═════════════ Первый экран ═════════════ -->
+<section class="hero" id="top" data-spy="" data-part="0" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title" class="rv-h"><span class="a">Личный кабинет<br>студента</span></h1>
+        <p class="hero-lead rv" style="--i:1">К&nbsp;29&nbsp;января 2027&nbsp;года студенты входят в&nbsp;свой кабинет: профиль, расписание и&nbsp;зачётка, сообщения, опросы и&nbsp;объявления. В&nbsp;браузере и&nbsp;на&nbsp;телефоне.</p>
+        <ul class="hero-facts rv" style="--i:2">
+          <li><b>2</b><span>разработчика в&nbsp;команде</span></li>
+          <li><b>13</b><span>недель, ноябрь&nbsp;– январь</span></li>
+          <li><b>580</b><span>тыс.&nbsp;₽ в&nbsp;месяц на&nbsp;руки</span></li>
+        </ul>
+        <div class="cta-row rv" style="--i:3">
+          <a class="btn btn-primary" href="#roadmap">План на 13 недель<span class="ico-box"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="btn" href="#services">Что будет в кабинете<span class="ico-box"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        </div>
+        <p class="hero-meta rv" style="--i:4"><span class="sq" aria-hidden="true"></span>План первой очереди цифрового кампуса · ноябрь 2026</p>
+      </div>
+
+      <figure class="hero-art tg-fig">
+        <svg class="tg" id="tg" viewBox="0 0 400 400" role="group" aria-label="Модули платформы: четыре в работе, три — следующей очередью">
+          <a class="pc dark" href="#open" data-k="lms" style="--c:var(--orange);--nx:0px;--ny:-10px" aria-label="LMS и БРС">
+            <polygon points="9.66,4 390.34,4 200,194.34"/>
+            <text x="200" y="72" text-anchor="middle">LMS и БРС</text>
+          </a>
+          <a class="pc" href="#svc-comm" data-k="comm" style="--c:var(--violet);--nx:-10px;--ny:0px" aria-label="Сообщения и опросы">
+            <polygon points="4,9.66 194.34,200 4,390.34"/>
+            <text x="64" y="196" text-anchor="middle">Сообщения</text>
+            <text x="64" y="214" text-anchor="middle">и опросы</text>
+          </a>
+          <a class="pc dark" href="#open" data-k="analytics" style="--c:var(--green);--nx:8.6px;--ny:-5.1px" aria-label="Аналитика">
+            <polygon points="396,9.66 396,190.34 305.66,100"/>
+            <text x="0" y="0" text-anchor="middle" transform="translate(377 100) rotate(-90)">Аналитика</text>
+          </a>
+          <a class="pc" href="#svc-access" data-k="access" style="--c:var(--blue);--nx:10px;--ny:0px" aria-label="Вход">
+            <polygon points="300,105.66 394.34,200 300,294.34 205.66,200"/>
+            <text x="300" y="205" text-anchor="middle">Вход</text>
+          </a>
+          <a class="pc" href="#data" data-k="integr" style="--c:var(--gray);--nx:0px;--ny:10px" aria-label="API университета">
+            <polygon points="200,205.66 290.34,296 109.66,296"/>
+            <text x="200" y="268" text-anchor="middle">API</text>
+            <text x="200" y="286" text-anchor="middle">университета</text>
+          </a>
+          <a class="pc" href="#svc-cabinet" data-k="cabinet" style="--c:var(--crimson);--nx:-3.2px;--ny:9.5px" aria-label="Личный кабинет студента">
+            <polygon points="9.66,396 101.66,304 290.34,304 198.34,396"/>
+            <text x="148" y="355" text-anchor="middle">Личный кабинет</text>
+          </a>
+          <a class="pc dark" href="#open" data-k="portfolio" style="--c:var(--yellow);--nx:7.1px;--ny:7.1px" aria-label="Портфолио">
+            <polygon points="396,209.66 396,396 209.66,396"/>
+            <text x="334" y="350" text-anchor="middle">Портфолио</text>
+          </a>
+        </svg>
+        <figcaption class="tg-cap" id="tg-cap" aria-live="polite">
+          <span class="sq" aria-hidden="true"></span>
+          <span class="body">Четыре модуля — за три месяца, остальные — следующей очередью</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="hero-line" aria-hidden="true"><div class="mline" id="hero-line" data-anim></div></div>
+</section>
+
+<!-- ═════════════ Часть 1 ═════════════ -->
+<section class="part part--crimson" id="part1" data-part="1" aria-labelledby="part1-title">
+  <div class="part-art" aria-hidden="true"><svg viewBox="0 0 520 520" data-pattern="1" data-anim></svg></div>
+  <div class="wrap part-inner">
+    <h2 class="part-title rv-h" id="part1-title"><span class="no">Часть 1</span><span class="nm">Кабинет и план</span></h2>
+    <ol class="part-toc rv" style="--i:1">
+      <li><a href="#services"><span class="n">01</span>Что будет в кабинете</a></li>
+      <li><a href="#data"><span class="n">02</span>Как кабинет получает данные</a></li>
+      <li><a href="#roadmap"><span class="n">03</span>План на 13 недель</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="sec" id="services" data-spy="01" data-part="1" aria-labelledby="services-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">01</span>
+      <div class="tt"><h2 class="rv-h" id="services-t">Что будет в кабинете</h2><p class="sec-sub rv">Один кабинет для студента и&nbsp;рабочее место для сотрудников. Работает в&nbsp;браузере и&nbsp;устанавливается на&nbsp;телефон как приложение.</p></div>
+    </header>
+    <div class="sec-wide">
+      <div class="bento" id="bento">
+        <article class="svc b-access" id="svc-access" style="--c:var(--blue);--i:0">
+          <span class="glyph" aria-hidden="true" style="width:79px;height:79px"><svg viewBox="205.66 105.66 188.68 188.68"><polygon points="300,105.66 394.34,200 300,294.34 205.66,200"/></svg></span>
+          <span class="chip">Доступ</span>
+          <h3>Вход и регистрация</h3>
+          <p>Студент регистрируется сам: кабинет сверяет его данные через API университета, студент задаёт пароль.</p>
+        </article>
+        <article class="svc svc--feature b-cabinet" id="svc-cabinet" style="--c:var(--crimson);--i:1">
+          <span class="glyph" aria-hidden="true" style="width:118px;height:39px"><svg viewBox="9.66 304 280.68 92"><polygon points="9.66,396 101.66,304 290.34,304 198.34,396"/></svg></span>
+          <span class="chip">Кабинет</span>
+          <h3>Профиль, расписание и&nbsp;зачётка</h3>
+          <p>ФИО, группа, направление, курс и&nbsp;статус — из&nbsp;API университета. Расписание и&nbsp;оценки — если API их&nbsp;отдаёт.</p>
+        </article>
+        <article class="svc" id="svc-comm" style="--c:var(--violet);--i:2;grid-column:span 7">
+          <span class="glyph" aria-hidden="true" style="width:80px;height:160px"><svg viewBox="4 9.66 190.34 380.68"><polygon points="4,9.66 194.34,200 4,390.34"/></svg></span>
+          <span class="chip">Связь</span>
+          <h3>Сообщения</h3>
+          <p>Личные сообщения и&nbsp;чаты групп и&nbsp;курсов, вложения, доставка в&nbsp;реальном времени. Сотрудники модерируют общие чаты.</p>
+          <ol class="flow"><li>Студент</li><li>Преподаватель</li><li>Деканат</li></ol>
+        </article>
+        <article class="svc" id="svc-polls" style="--c:var(--violet);--i:3;grid-column:span 5">
+          <span class="glyph" aria-hidden="true" style="width:78px;height:78px"><svg viewBox="209.66 209.66 186.34 186.34"><polygon points="396,209.66 396,396 209.66,396"/></svg></span>
+          <span class="chip">Обратная связь</span>
+          <h3>Опросы</h3>
+          <ol class="flow"><li>Конструктор</li><li>Адресация</li><li>Результаты</li></ol>
+          <p>Анонимные и&nbsp;именные опросы для групп, курсов и&nbsp;направлений; результаты в&nbsp;кабинете и&nbsp;выгрузка в&nbsp;Excel.</p>
+        </article>
+        <article class="svc" id="svc-news" style="--c:var(--yellow);--i:4;grid-column:span 5">
+          <span class="glyph" aria-hidden="true" style="width:38px;height:76px"><svg viewBox="305.66 9.66 90.34 180.68"><polygon points="396,9.66 396,190.34 305.66,100"/></svg></span>
+          <span class="chip">Новости</span>
+          <h3>Уведомления и&nbsp;объявления</h3>
+          <p>Объявления деканатов и&nbsp;кафедр, push-уведомления на&nbsp;телефон и&nbsp;в&nbsp;браузере.</p>
+        </article>
+        <article class="svc" id="svc-admin" style="--c:var(--orange);--i:5;grid-column:span 7">
+          <span class="glyph" aria-hidden="true" style="width:160px;height:80px"><svg viewBox="9.66 4 380.68 190.34"><polygon points="9.66,4 390.34,4 200,194.34"/></svg></span>
+          <span class="chip">Сотрудники</span>
+          <h3>Админка для сотрудников</h3>
+          <p>Сотрудники деканатов сами создают опросы и&nbsp;рассылки, смотрят результаты, управляют ролями и&nbsp;списками групп.</p>
+          <p class="flow-cap">Роли</p>
+          <ol class="flow flow--num"><li>администратор</li><li>деканат</li><li>преподаватель</li><li>модератор</li></ol>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="sec" id="data" data-spy="02" data-part="1" aria-labelledby="data-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">02</span>
+      <div class="tt"><h2 class="rv-h" id="data-t">Как кабинет получает данные</h2><p class="sec-sub rv">API университета отдаёт сведения по&nbsp;одному студенту за&nbsp;запрос. Массовой выгрузки не&nbsp;нужно: кабинет запрашивает данные тогда, когда студент входит.</p></div>
+    </header>
+    <div class="sec-body">
+      <ol class="flow rv" style="font-size:16px;margin-bottom:28px"><li>Студент</li><li>Кабинет на ВМ университета</li><li>API университета</li><li>Кэш профиля</li></ol>
+      <div class="staff">
+        <article class="rv" style="--i:0"><h3>Регистрация</h3><p>Студент вводит номер студенческого билета и&nbsp;дату рождения. Кабинет сверяет их через API, студент задаёт пароль. Забытый пароль сбрасывает сотрудник деканата.</p></article>
+        <article class="rv" style="--i:1"><h3>Вход</h3><p>При каждом входе профиль обновляется из&nbsp;API. Если API недоступен, студент видит последние сохранённые данные.</p></article>
+        <article class="rv" style="--i:2"><h3>Отчисление и выпуск</h3><p>Если API сообщает, что студент больше не&nbsp;учится, доступ закрывается при следующем входе или ночной проверке.</p></article>
+        <article class="rv" style="--i:3"><h3>Группы для опросов</h3><p>Группы и&nbsp;курсы складываются из&nbsp;профилей вошедших студентов. Деканат может загрузить список группы заранее.</p></article>
+        <article class="rv" style="--i:4"><h3>Сотрудники</h3><p>API отдаёт только студентов, поэтому сотрудников заводят в&nbsp;админке — вручную или списком.</p></article>
+        <article class="rv" style="--i:5"><h3>Бережная нагрузка</h3><p>Запросы к&nbsp;API ограничены по&nbsp;частоте и&nbsp;записываются в&nbsp;журнал: кто, когда и&nbsp;какие данные запросил.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="sec" id="roadmap" data-spy="03" data-part="1" aria-labelledby="roadmap-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">03</span>
+      <div class="tt"><h2 class="rv-h" id="roadmap-t">План на 13 недель: ноябрь 2026 – январь 2027</h2><p class="sec-sub rv">Каждые две-три недели — новый работающий результат на&nbsp;стенде. Новогодние праздники учтены, пилот — после них, запуск для всех — к&nbsp;весеннему семестру.</p></div>
+    </header>
+    <div class="sec-wide">
+      <div class="gantt-wrap" role="region" aria-label="Диаграмма Ганта по пяти потокам работ на 13 недель" tabindex="0">
+        <div class="gantt" id="gantt">
+          <div class="y" style="grid-row:1;grid-column:1;border-left:0"></div>
+          <div class="y" style="grid-row:1;grid-column:2 / span 4">Ноябрь 2026</div>
+          <div class="y" style="grid-row:1;grid-column:6 / span 5">Декабрь</div>
+          <div class="y" style="grid-row:1;grid-column:11 / span 4">Январь 2027</div>
+          <div class="mh" style="grid-row:2;grid-column:1;border-left:0"></div>
+
+          <div class="rl" style="--c:var(--gray);grid-row:3"><i></i>Организация и ИБ</div>
+          <div class="bar" style="--c:var(--gray);--s:1;grid-row:3;grid-column:2 / span 2"><span>Приказ, доступы, ПДн</span></div>
+          <div class="bar" style="--c:var(--gray);--s:8;grid-row:3;grid-column:9 / span 1"><span>ПДн</span></div>
+          <div class="bar" style="--c:var(--gray);--s:11;grid-row:3;grid-column:12 / span 1"><span>ИБ</span></div>
+          <div class="bar" style="--c:var(--gray);--s:13;grid-row:3;grid-column:14 / span 1"><span>Приёмка</span></div>
+
+          <div class="rl" style="--c:var(--blue);grid-row:4"><i></i>Инфраструктура и API</div>
+          <div class="bar" style="--c:var(--blue);--s:1;grid-row:4;grid-column:2 / span 3"><span>Каркас, ВМ, API</span></div>
+          <div class="bar" style="--c:var(--blue);--s:5;grid-row:4;grid-column:6 / span 1"><span>Копии</span></div>
+          <div class="bar" style="--c:var(--blue);--s:9;grid-row:4;grid-column:10 / span 2"><span>Нагрузка, праздники</span></div>
+          <div class="bar" style="--c:var(--blue);--s:12;grid-row:4;grid-column:13 / span 2"><span>Рабочий контур</span></div>
+
+          <div class="rl" style="--c:var(--crimson);grid-row:5"><i></i>Кабинет студента</div>
+          <div class="bar" style="--c:var(--crimson);--s:1;grid-row:5;grid-column:2 / span 2"><span>Прототипы</span></div>
+          <div class="bar" style="--c:var(--crimson);--s:3;grid-row:5;grid-column:4 / span 2"><span>Вход, профиль</span></div>
+          <div class="bar" style="--c:var(--crimson);--s:6;grid-row:5;grid-column:7 / span 4"><span>Расписание, зачётка, push</span></div>
+          <div class="bar" style="--c:var(--crimson);--s:11;grid-row:5;grid-column:12 / span 3"><span>Пилот → все</span></div>
+
+          <div class="rl" style="--c:var(--violet);grid-row:6"><i></i>Сообщения и опросы</div>
+          <div class="bar" style="--c:var(--violet);--s:4;grid-row:6;grid-column:5 / span 3"><span>Сообщения</span></div>
+          <div class="bar" style="--c:var(--violet);--s:7;grid-row:6;grid-column:8 / span 2"><span>Опросы</span></div>
+          <div class="bar" style="--c:var(--violet);--s:12;grid-row:6;grid-column:13 / span 1"><span>Опрос</span></div>
+
+          <div class="rl" style="--c:var(--orange);grid-row:7"><i></i>Админка сотрудников</div>
+          <div class="bar dk" style="--c:var(--orange);--s:5;grid-row:7;grid-column:6 / span 3"><span>Роли, рассылки, модерация</span></div>
+          <div class="bar dk" style="--c:var(--orange);--s:11;grid-row:7;grid-column:12 / span 1"><span>Обучение</span></div>
+
+          <div class="rl" style="grid-row:8">Вехи</div>
+          <div class="ms" style="--s:2;grid-row:8;grid-column:3"><i></i><span>13.11</span></div>
+          <div class="ms" style="--s:5;grid-row:8;grid-column:6"><i></i><span>В0</span></div>
+          <div class="ms" style="--s:8;grid-row:8;grid-column:9"><i></i><span>В1</span></div>
+          <div class="ms" style="--s:11;grid-row:8;grid-column:12"><i></i><span>Пилот</span></div>
+          <div class="ms" style="--s:13;grid-row:8;grid-column:14"><i></i><span>В2</span></div>
+
+          <div class="sel" id="gantt-sel" aria-hidden="true"></div>
+          <div class="now" id="gantt-now" aria-hidden="true"><span>сегодня</span></div>
+        </div>
+      </div>
+      <p class="scroll-hint"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>Диаграмму можно прокрутить в сторону.</p>
+
+      <div class="mi" id="mi">
+        <div class="mi-title">
+          <h3>По неделям</h3>
+          <ul class="legend" aria-label="Потоки работ">
+            <li><i class="lt" style="--c:var(--gray)">О</i>организация и ИБ</li>
+            <li><i class="lt" style="--c:var(--blue)">И</i>инфраструктура и API</li>
+            <li><i class="lt" style="--c:var(--crimson)">Л</i>кабинет</li>
+            <li><i class="lt" style="--c:var(--violet)">С</i>сообщения и опросы</li>
+            <li><i class="lt dk" style="--c:var(--orange)">А</i>админка</li>
+          </ul>
+        </div>
+        <div class="mi-rail" role="tablist" aria-label="Недели проекта" id="mi-rail"></div>
+        <div class="mi-panel" role="tabpanel" id="mi-panel" aria-live="polite">
+          <div class="mi-head mi-anim"><b id="mi-m">Н1</b><span id="mi-d">2–8 ноя</span><span class="key" id="mi-key" hidden><i aria-hidden="true"></i>Ключевая веха</span></div>
+          <ul class="mi-works mi-anim" id="mi-works"></ul>
+          <div>
+            <div class="mi-res mi-anim"><span>Результат</span><b id="mi-res">Старт, прототипы в работе</b></div>
+            <div class="mi-nav"><button type="button" id="mi-prev" aria-label="Предыдущая неделя"><svg class="ico" aria-hidden="true"><use href="#i-left"/></svg></button><button type="button" id="mi-next" aria-label="Следующая неделя"><svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></button></div>
+          </div>
+        </div>
+      </div>
+      <details class="mi-all">
+        <summary><svg class="ico" aria-hidden="true"><use href="#i-right"/></svg>Все 13 недель списком</summary>
+        <div class="months" id="months"></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ Часть 2 ═════════════ -->
+<section class="part part--yellow" id="part2" data-part="2" aria-labelledby="part2-title">
+  <div class="part-art" aria-hidden="true"><svg viewBox="0 0 520 520" data-pattern="2" data-anim></svg></div>
+  <div class="wrap part-inner">
+    <h2 class="part-title rv-h" id="part2-title"><span class="no">Часть 2</span><span class="nm">Бюджет и решение</span></h2>
+    <ol class="part-toc rv" style="--i:1">
+      <li><a href="#budget"><span class="n">04</span>Команда и бюджет</a></li>
+      <li><a href="#staff"><span class="n">05</span>Что нужно от университета</a></li>
+      <li><a href="#decision"><span class="n">06</span>Решение и первые шаги</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="sec" id="budget" data-spy="04" data-part="2" aria-labelledby="budget-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">04</span>
+      <div class="tt"><h2 class="rv-h" id="budget-t">Команда и бюджет</h2><p class="sec-sub rv">Руководитель разработки и&nbsp;программист с&nbsp;первого дня. Каждый месяц заканчивается результатом, который университет принимает на&nbsp;стенде.</p></div>
+    </header>
+    <div class="sec-body">
+      <h3 class="rv">По месяцам</h3>
+      <ol class="stages stages--3">
+        <li class="rv" style="--i:0"><span class="st-n">Месяц 1 · Н1–Н4</span><h4>Стенд и вход</h4><p class="st-when">ноябрь 2026</p><b class="st-sum">580<small>тыс. ₽ на руки</small></b><p class="st-res">30.11 — прототипы, вход и профиль из API, веха В0</p></li>
+        <li class="rv" style="--i:1"><span class="st-n">Месяц 2 · Н5–Н9</span><h4>Все функции</h4><p class="st-when">декабрь 2026</p><b class="st-sum">580<small>тыс. ₽ на руки</small></b><p class="st-res">25.12 — демо-стенд: сообщения, опросы, объявления, админка, веха В1</p></li>
+        <li class="rv" style="--i:2"><span class="st-n">Месяц 3 · Н10–Н13</span><h4>Пилот и запуск</h4><p class="st-when">январь 2027</p><b class="st-sum">580<small>тыс. ₽ на руки</small></b><p class="st-res">29.01 — кабинет у всех студентов, веха В2</p></li>
+      </ol>
+
+      <div class="costs">
+        <div class="rv">
+          <h3>Команда — 2 ставки</h3>
+          <p class="cols-cap">Тыс. ₽ в месяц; оба знают весь кабинет и подменяют друг друга</p>
+          <table class="rc" id="rc">
+            <thead><tr><th>Роль</th><th class="barcell"><span class="vh">Шкала</span></th><th class="r">На руки</th><th class="r">С налогами</th></tr></thead>
+            <tbody>
+              <tr class="has-sub" style="--i:0"><td class="role">Руководитель разработки</td><td class="barcell"><span class="bars"><i class="net" style="width:65.4%"></i><i class="tax" style="width:32.5%"></i></span></td><td class="r">340</td><td class="r"><b>509</b></td></tr>
+              <tr class="rc-sub"><td colspan="4">Архитектура и серверная часть, вход и API университета, ВМ, безопасность</td></tr>
+              <tr class="has-sub" style="--i:1"><td class="role">Программист</td><td class="barcell"><span class="bars"><i class="net" style="width:46.2%"></i><i class="tax" style="width:22.9%"></i></span></td><td class="r">240</td><td class="r"><b>359</b></td></tr>
+              <tr class="rc-sub"><td colspan="4">Интерфейсы кабинета и админки, сообщения и опросы, автотесты и инструкции</td></tr>
+            </tbody>
+          </table>
+          <ul class="rc-legend"><li><i style="--c:var(--blue)"></i>на руки</li><li><i style="--c:var(--blue-tint)"></i>НДФЛ и страховые взносы</li></ul>
+          <p class="small muted" style="margin-top:12px">Бюджет — только фонд оплаты труда. Виртуальные машины и&nbsp;API предоставляет университет, программное обеспечение — свободное, без лицензионных платежей.</p>
+        </div>
+        <div class="rv" style="--i:1">
+          <div class="after" style="margin-top:0"><h3>В месяц с налогами</h3><p>Зарплата 340&nbsp;+&nbsp;240&nbsp;тыс.&nbsp;₽ на&nbsp;руки, НДФЛ 13&nbsp;% и&nbsp;страховые взносы</p><b>≈ 0,87 млн ₽</b></div>
+          <div class="blk per-acc" style="--c:var(--crimson)"><p class="blk-big"><b>3 месяца<small>от старта до кабинета у всех студентов</small></b><span>Дальше та же команда сопровождает кабинет и&nbsp;делает следующую очередь</span></p></div>
+        </div>
+      </div>
+
+      <p class="bv-sum small muted">Итого за три месяца (ноябрь 2026 – январь 2027) — ≈ 2,6 млн ₽ с налогами.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="sec" id="staff" data-spy="05" data-part="2" aria-labelledby="staff-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">05</span>
+      <div class="tt"><h2 class="rv-h" id="staff-t">Что нужно от университета</h2><p class="sec-sub rv">План короткий, поэтому сроки ответа важны: доступы — в&nbsp;первые две недели, ответы на&nbsp;запросы — до&nbsp;3&nbsp;рабочих дней.</p></div>
+    </header>
+    <div class="sec-body">
+      <div class="staff">
+        <article class="rv" style="--i:0"><h3>ИТ-служба</h3><p>Три виртуальные машины и&nbsp;VPN к&nbsp;13&nbsp;ноября, публикация по&nbsp;HTTPS, адрес кабинета. С&nbsp;пилота — первая линия поддержки.</p></article>
+        <article class="rv" style="--i:1"><h3>Владелец API</h3><p>Документация, тестовый доступ, допустимая частота запросов и&nbsp;перечень полей — к&nbsp;13&nbsp;ноября.</p></article>
+        <article class="rv" style="--i:2"><h3>Учебный отдел и деканаты</h3><p>Состав опросов и&nbsp;рассылок, пилотные группы, сотрудники для админки, приёмка на&nbsp;стенде.</p></article>
+        <article class="rv" style="--i:3"><h3>ИБ и юрист</h3><p>Модель угроз, согласие на&nbsp;обработку персональных данных, положение о&nbsp;кабинете — к&nbsp;декабрю.</p></article>
+        <article class="rv" style="--i:4"><h3>Студенческий совет</h3><p>Обсуждение прототипов в&nbsp;ноябре, участие в&nbsp;пилоте в&nbsp;январе.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="sec sec--decision" id="decision" data-spy="06" data-part="2" aria-labelledby="decision-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">06</span>
+      <div class="tt"><h2 class="rv-h" id="decision-t">Решение и первые шаги</h2><p class="sec-sub rv">Чтобы 29&nbsp;января кабинет работал у&nbsp;всех студентов, команда начинает в&nbsp;первую неделю ноября.</p></div>
+      <div class="dec-art" aria-hidden="true"><svg viewBox="0 0 520 124" data-pattern="3" data-anim></svg></div>
+    </header>
+    <div class="sec-wide">
+      <div class="dec">
+        <article class="rv" style="--i:0">
+          <svg class="pg" aria-hidden="true"><use href="#pg-y"/></svg>
+          <h3>Просим утвердить</h3>
+          <ul class="dec-list">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>План на&nbsp;три месяца и&nbsp;состав кабинета</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Две ставки: 580&nbsp;тыс.&nbsp;₽ в&nbsp;месяц на&nbsp;руки, ноябрь 2026 – январь 2027</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Приказ о&nbsp;проекте: владелец продукта, ответственные в&nbsp;подразделениях, ответственный за&nbsp;персональные данные</span></li>
+          </ul>
+        </article>
+        <article class="rv" style="--i:1">
+          <svg class="pg" aria-hidden="true"><use href="#pg-g"/></svg>
+          <h3>Что нужно от&nbsp;университета</h3>
+          <ul class="dec-list dec-list--plain">
+            <li><span>Три виртуальные машины и&nbsp;VPN — к&nbsp;13&nbsp;ноября</span></li>
+            <li><span>Тестовый доступ к&nbsp;API с&nbsp;документацией — к&nbsp;13&nbsp;ноября</span></li>
+            <li><span>3–5 пилотных групп на&nbsp;январь</span></li>
+          </ul>
+        </article>
+        <article class="rv" style="--i:2">
+          <svg class="pg" aria-hidden="true"><use href="#pg-w"/></svg>
+          <h3>Что вы увидите</h3>
+          <ol class="dec-steps">
+            <li><b>30.11</b><span>Прототипы всех экранов; на&nbsp;стенде — регистрация, вход и&nbsp;профиль из&nbsp;API</span></li>
+            <li><b>25.12</b><span>Демо-стенд: сообщения, опросы, объявления и&nbsp;админка</span></li>
+            <li class="is-key"><b>29.01</b><span><strong>Кабинет у&nbsp;всех студентов</strong> — к&nbsp;началу весеннего семестра. Веха&nbsp;В2 — приёмка</span></li>
+          </ol>
+        </article>
+      </div>
+      <p class="dec-foot rv" style="--i:3"><span>Каждый месяц заканчивается приёмкой результата на&nbsp;стенде.</span><a class="dec-link" href="#roadmap">План на 13 недель<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ Часть 3 ═════════════ -->
+<section class="part part--blue" id="part3" data-part="3" aria-labelledby="part3-title">
+  <div class="part-art" aria-hidden="true"><svg viewBox="0 0 520 520" data-pattern="4" data-anim></svg></div>
+  <div class="wrap part-inner">
+    <h2 class="part-title rv-h" id="part3-title"><span class="no">Часть 3</span><span class="nm">Технические детали</span></h2>
+    <ol class="part-toc rv" style="--i:1">
+      <li><a href="#stack"><span class="n">07</span>Технологии</a></li>
+      <li><a href="#infra"><span class="n">08</span>Три виртуальные машины</a></li>
+      <li><a href="#security"><span class="n">09</span>ИБ и персональные данные</a></li>
+      <li><a href="#open"><span class="n">10</span>Допущения и открытые вопросы</a></li>
+      <li><a href="#sources"><span class="n">11</span>Источники</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="sec" id="stack" data-spy="07" data-part="3" aria-labelledby="stack-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">07</span>
+      <div class="tt"><h2 class="rv-h" id="stack-t">Технологии</h2><p class="sec-sub rv">Свободное ПО с&nbsp;разрешительными лицензиями — 0&nbsp;₽ лицензионных платежей. Тот же стек, что и&nbsp;для всего цифрового кампуса: следующие модули встанут в&nbsp;ту же кодовую базу.</p></div>
+    </header>
+    <div class="sec-body">
+      <div class="tbl-wrap rv">
+        <table class="tbl stack stack-tbl">
+          <thead><tr><th>Слой</th><th>Решение</th><th>Лицензия</th></tr></thead>
+          <tbody>
+            <tr><td>Серверная часть</td><td>Python 3.13, Django 5.2 LTS, Django REST Framework, Celery</td><td><span class="tag">BSD</span></td></tr>
+            <tr><td>Интерфейс</td><td>TypeScript, React, Vite, PWA с push-уведомлениями; дизайн-система в фирменном стиле</td><td><span class="tag">MIT</span></td></tr>
+            <tr><td>Сообщения в реальном времени</td><td>Centrifugo</td><td><span class="tag">Apache 2.0</span></td></tr>
+            <tr><td>Базы данных и кэш</td><td>PostgreSQL 17, Valkey</td><td><span class="tag">PostgreSQL, BSD</span></td></tr>
+            <tr><td>Вход</td><td>Keycloak</td><td><span class="tag">Apache 2.0</span></td></tr>
+            <tr><td>Развёртывание</td><td>Docker Compose + Ansible, обновления без простоя</td><td><span class="tag">Apache 2.0 / GPL</span></td></tr>
+            <tr><td>ОС</td><td>Debian 13</td><td><span class="tag">—</span></td></tr>
+            <tr><td>Разработка и эксплуатация</td><td>GitLab CE, Prometheus, Grafana, Loki</td><td><span class="tag">MIT / Apache 2.0 / AGPL</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="sec" id="infra" data-spy="08" data-part="3" aria-labelledby="infra-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">08</span>
+      <div class="tt"><h2 class="rv-h" id="infra-t">Три виртуальные машины</h2><p class="sec-sub rv">Кабинет и&nbsp;все данные — на&nbsp;ВМ университета. Резервные копии — ежедневно, проверка восстановления — до&nbsp;пилота.</p></div>
+    </header>
+    <div class="sec-body">
+      <div class="specs">
+        <div class="spec rv" style="--i:0"><b>3</b><span>ВМ, Debian 13</span></div>
+        <div class="spec rv" style="--i:1"><b>16</b><span>vCPU</span></div>
+        <div class="spec rv" style="--i:2"><b>48 ГБ</b><span>RAM</span></div>
+        <div class="spec rv" style="--i:3"><b>500 ГБ</b><span>SSD</span></div>
+      </div>
+      <div class="tbl-wrap rv">
+        <table class="tbl stack">
+          <thead><tr><th>Машина</th><th>Что работает</th><th>Ресурсы</th></tr></thead>
+          <tbody>
+            <tr class="hl"><td>ВМ 1 · приложения</td><td>Веб-сервер, кабинет и админка, сообщения в реальном времени, вход (Keycloak)</td><td>8 vCPU, 16 ГБ</td></tr>
+            <tr><td>ВМ 2 · данные</td><td>PostgreSQL, кэш, файлы и вложения, резервные копии</td><td>4 vCPU, 16 ГБ, 300 ГБ</td></tr>
+            <tr><td>ВМ 3 · стенд и мониторинг</td><td>Тестовый стенд для приёмки, сборка, мониторинг и журналы, копия резервных копий</td><td>4 vCPU, 16 ГБ</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note rv"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><p><b>Ограничение.</b> Три машины не&nbsp;дают дублирования: при сбое ВМ кабинет восстанавливается из&nbsp;копий за&nbsp;несколько часов. Для учебного кабинета этого достаточно; резервная площадка — в&nbsp;следующей очереди.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="sec" id="security" data-spy="09" data-part="3" aria-labelledby="security-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">09</span>
+      <div class="tt"><h2 class="rv-h" id="security-t">Информационная безопасность и персональные данные</h2></div>
+    </header>
+    <div class="sec-body">
+      <div class="cols-2">
+        <article class="blk law rv" style="--c:var(--blue)">
+          <h3>Требования</h3>
+          <ul>
+            <li><b>ФЗ-273, ст. 16</b> — электронная информационно-образовательная среда.</li>
+            <li><b>152-ФЗ</b> — хранение в РФ, отдельное согласие на обработку; <b>ПП № 1119</b>.</li>
+            <li><b>Приказ ФСТЭК № 21</b> — меры защиты персональных данных.</li>
+            <li><b>Приказ ФСТЭК № 117</b> — защита ИС государственных учреждений.</li>
+          </ul>
+        </article>
+        <article class="blk rv" style="--c:var(--violet);--i:1">
+          <h3>Меры</h3>
+          <ul>
+            <li>Данные только на ВМ университета, во внешние сервисы не передаются.</li>
+            <li>Согласие на обработку данных — при регистрации.</li>
+            <li>Шифрование трафика.</li>
+            <li>Журнал запросов к API и действий в админке.</li>
+            <li>Проверка ИБ до открытия кабинета для всех — январь 2027.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="sec" id="open" data-spy="10" data-part="3" aria-labelledby="open-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">10</span>
+      <div class="tt"><h2 class="rv-h" id="open-t">Допущения и открытые вопросы</h2></div>
+    </header>
+    <div class="sec-body">
+      <details class="mi-all spoiler">
+        <summary><svg class="ico" aria-hidden="true"><use href="#i-right"/></svg>Показать допущения и открытые вопросы</summary>
+        <ul class="open">
+          <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Какие поля отдаёт API. Если в&nbsp;нём нет расписания и&nbsp;оценок, они переходят в&nbsp;следующую очередь, остальной план не&nbsp;меняется.</span></li>
+          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Допустимая частота запросов к&nbsp;API и&nbsp;его доступность ночью и&nbsp;в&nbsp;праздники.</span></li>
+          <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Какие поля API использовать для сверки при регистрации — номер студенческого билета и&nbsp;дата рождения или другие.</span></li>
+          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Как получать списки групп заранее — загрузка деканатами или отдельный метод API.</span></li>
+          <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Учётные записи преподавателей — вручную в&nbsp;админке или из&nbsp;кадровой системы.</span></li>
+          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Требования учредителя и&nbsp;ДИТ Москвы к&nbsp;публикации кабинета в&nbsp;интернете.</span></li>
+          <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Возможность применить ставки в&nbsp;штатном расписании ГАОУ.</span></li>
+          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Задержка ВМ или API на&nbsp;неделю сдвигает все вехи на&nbsp;неделю.</span></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="sec" id="sources" data-spy="11" data-part="3" aria-labelledby="sources-t">
+  <div class="wrap sec-grid">
+    <header class="sec-head">
+      <span class="n">11</span>
+      <div class="tt"><h2 class="rv-h" id="sources-t">Источники</h2></div>
+    </header>
+    <div class="sec-body">
+      <ul class="sources rv">
+        <li>Концепция «Цифровой кампус» Университета Правительства Москвы, октябрь 2026</li>
+        <li>273-ФЗ «Об образовании в Российской Федерации», ст. 16</li>
+        <li>152-ФЗ; ПП РФ № 1119; Приказы ФСТЭК России № 21 и № 117 от 11.04.2025</li>
+        <li>НК РФ, ст. 224 и 425–427 — НДФЛ и страховые взносы 2026–2027 гг.</li>
+        <li>Лицензии компонентов: Django, React, Keycloak, Centrifugo, PostgreSQL, Valkey — официальные репозитории</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-pattern" aria-hidden="true"><svg id="foot-pattern" data-anim></svg></div>
+  <div class="wrap foot-inner">
+    <div class="foot-brand"><span class="brand brand--lg"><img class="brand-mark" src="assets/logo-mark.svg" alt="" width="64" height="64" loading="lazy"><span class="brand-text">Университет<br>Правительства<br>Москвы</span></span></div>
+    <div class="foot-text">
+      <p>Личный кабинет студента Университета Правительства Москвы · план на три месяца · ноябрь 2026</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" id="to-top" aria-label="Наверх"><svg class="ico" aria-hidden="true"><use href="#i-up"/></svg></button>
+
+<script src="plan.js?v=3" defer></script>
+<script src="assets/site.js?v=22" defer></script>
+</body>
+</html>
