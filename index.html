@@ -387,10 +387,10 @@
     </header>
     <div class="sec-body">
       <div class="staff">
-        <article class="rv" style="--i:0"><h3>ИТ-служба</h3><p>Три виртуальные машины, хранилище копий и&nbsp;VPN к&nbsp;13&nbsp;ноября. Рабочий адрес и&nbsp;сертификат к&nbsp;23&nbsp;декабря. С&nbsp;пилота — первая линия поддержки.</p></article>
-        <article class="rv" style="--i:1"><h3>Подразделение, которое ведёт 1С</h3><p>Проверка готовых интерфейсов 1С, документация, тестовый доступ и&nbsp;допустимая частота запросов — к&nbsp;13&nbsp;ноября. Рабочий доступ — к&nbsp;23&nbsp;декабря.</p></article>
+        <article class="rv" style="--i:0"><h3>ИТ-служба</h3><p>Три виртуальные машины с&nbsp;бэкапом на&nbsp;гипервизоре и&nbsp;VPN к&nbsp;13&nbsp;ноября. Рабочий адрес и&nbsp;сертификат к&nbsp;23&nbsp;декабря. С&nbsp;пилота — первая линия поддержки.</p></article>
+        <article class="rv" style="--i:1"><h3>Подразделение, которое ведёт 1С</h3><p>Какие методы 1С уже есть — к&nbsp;11&nbsp;ноября. Тестовый доступ с&nbsp;описанием методов — к&nbsp;13&nbsp;ноября, новый метод сверки, если нужен, — к&nbsp;23&nbsp;ноября. Рабочий доступ — к&nbsp;23&nbsp;декабря.</p></article>
         <article class="rv" style="--i:2"><h3>Учебный отдел и деканаты</h3><p>Состав опросов и&nbsp;рассылок, пилотные группы, сотрудники для админки, верные номера телефонов в&nbsp;1С, приёмка на&nbsp;стенде.</p></article>
-        <article class="rv" style="--i:3"><h3>ИБ и юрист</h3><p>Статус системы — к&nbsp;13&nbsp;ноября, модель угроз — к&nbsp;30&nbsp;ноября, согласие и&nbsp;положение о&nbsp;кабинете — к&nbsp;18&nbsp;декабря, проверка мер защиты — к&nbsp;30&nbsp;декабря.</p></article>
+        <article class="rv" style="--i:3"><h3>ИБ и юрист</h3><p>Решения по&nbsp;ОС и&nbsp;доступу разработчиков — к&nbsp;13&nbsp;ноября, модель угроз — к&nbsp;30&nbsp;ноября, согласие и&nbsp;положение о&nbsp;кабинете — к&nbsp;18&nbsp;декабря, проверка мер защиты — к&nbsp;30&nbsp;декабря.</p></article>
         <article class="rv" style="--i:4"><h3>Студенческий совет</h3><p>Обсуждение прототипов в&nbsp;ноябре, участие в&nbsp;пилоте в&nbsp;январе.</p></article>
       </div>
     </div>
@@ -420,7 +420,7 @@
           <svg class="pg" aria-hidden="true"><use href="#pg-g"/></svg>
           <h3>Что нужно от&nbsp;университета</h3>
           <ul class="dec-list dec-list--plain">
-            <li><span>Три виртуальные машины, хранилище копий и&nbsp;VPN — к&nbsp;13&nbsp;ноября</span></li>
+            <li><span>Три виртуальные машины с&nbsp;бэкапом на&nbsp;гипервизоре и&nbsp;VPN — к&nbsp;13&nbsp;ноября</span></li>
             <li><span>Тестовый доступ к&nbsp;API с&nbsp;документацией — к&nbsp;13&nbsp;ноября</span></li>
             <li><span>3–5 пилотных групп на&nbsp;январь</span></li>
           </ul>
@@ -487,7 +487,7 @@
   <div class="wrap sec-grid">
     <header class="sec-head">
       <span class="n">08</span>
-      <div class="tt"><h2 class="rv-h" id="infra-t">Три виртуальные машины</h2><p class="sec-sub rv">Кабинет и&nbsp;все данные — на&nbsp;ВМ университета. Резервные копии — ежедневно, в&nbsp;отдельное хранилище университета, проверка восстановления — до&nbsp;пилота.</p></div>
+      <div class="tt"><h2 class="rv-h" id="infra-t">Три виртуальные машины</h2><p class="sec-sub rv">Кабинет и&nbsp;все данные — на&nbsp;ВМ университета. Бэкап — ежедневные снимки ВМ на&nbsp;гипервизоре университета, проверка восстановления — до&nbsp;пилота.</p></div>
     </header>
     <div class="sec-body">
       <div class="specs">
@@ -501,9 +501,9 @@
           <thead><tr><th>Машина</th><th>Что работает</th><th>Ресурсы</th></tr></thead>
           <tbody>
             <tr class="hl"><td>ВМ 1 · приложения</td><td>Веб-сервер, кабинет и админка, сообщения в реальном времени, вход (Keycloak)</td><td>8 vCPU, 16 ГБ, 50 ГБ</td></tr>
-            <tr><td>ВМ 2 · данные</td><td>PostgreSQL, кэш, файлы и вложения, резервные копии</td><td>4 vCPU, 16 ГБ, 300 ГБ</td></tr>
+            <tr><td>ВМ 2 · данные</td><td>PostgreSQL, кэш, файлы и вложения</td><td>4 vCPU, 16 ГБ, 300 ГБ</td></tr>
             <tr><td>ВМ 3 · стенд и мониторинг</td><td>Тестовый стенд для приёмки, сборка, мониторинг и журналы. Только обезличенные записи</td><td>4 vCPU, 16 ГБ, 150 ГБ</td></tr>
-            <tr><td>Хранилище копий</td><td>Том или S3 университета, отдельно от дисков ВМ: зашифрованные резервные копии</td><td>300 ГБ</td></tr>
+            <tr><td>Бэкап</td><td>Ежедневные снимки всех трёх ВМ на&nbsp;гипервизоре, хранение не&nbsp;менее 7&nbsp;дней</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
@@ -527,7 +527,7 @@
             <li><b>ФЗ-273, ст. 16</b> — электронная информационно-образовательная среда.</li>
             <li><b>152-ФЗ</b> — хранение в РФ, отдельное согласие на обработку; <b>ПП № 1119</b>.</li>
             <li><b>Приказ ФСТЭК № 21</b> — меры защиты персональных данных.</li>
-            <li><b>Приказ ФСТЭК № 117</b> — защита ИС государственных учреждений.</li>
+            <li><b>Приказ ФСТЭК № 117</b> — защита ИС государственных учреждений. Кабинет — не&nbsp;ГИС.</li>
           </ul>
         </article>
         <article class="blk rv" style="--c:var(--violet);--i:1">
@@ -557,13 +557,12 @@
         <summary><svg class="ico" aria-hidden="true"><use href="#i-right"/></svg>Показать допущения и открытые вопросы</summary>
         <ul class="open">
           <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Какие поля отдаёт API. Если в&nbsp;нём нет расписания и&nbsp;оценок, они переходят в&nbsp;следующую очередь, остальной план не&nbsp;меняется.</span></li>
-          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Допустимая частота запросов к&nbsp;API и&nbsp;его доступность ночью и&nbsp;в&nbsp;праздники.</span></li>
+          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Выдержит ли API до&nbsp;5&nbsp;запросов в&nbsp;секунду с&nbsp;ответом не&nbsp;дольше секунды.</span></li>
           <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Хватит ли готовых интерфейсов 1С для сверки по&nbsp;ФИО, дате рождения и&nbsp;телефону и&nbsp;заполнены ли номера телефонов.</span></li>
           <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Как получать списки групп заранее — загрузка деканатами или отдельный метод API.</span></li>
           <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Учётные записи преподавателей — вручную в&nbsp;админке или из&nbsp;кадровой системы.</span></li>
           <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Требования учредителя и&nbsp;ДИТ Москвы к&nbsp;публикации кабинета в&nbsp;интернете.</span></li>
-          <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Статус системы: государственная информационная система или иная. Если государственная, аттестат нужен до&nbsp;пилота, и&nbsp;вехи сдвинутся.</span></li>
-          <li class="rv" style="--i:1"><span class="q" aria-hidden="true">?</span><span>Задержка ВМ или API на&nbsp;неделю сдвигает все вехи на&nbsp;неделю.</span></li>
+          <li class="rv" style="--i:0"><span class="q" aria-hidden="true">?</span><span>Задержка ВМ или API на&nbsp;неделю сдвигает все вехи на&nbsp;неделю.</span></li>
         </ul>
       </details>
     </div>
